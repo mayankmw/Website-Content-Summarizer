@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import axios from "axios";
+import "./App.css";
 
 const App = () => {
-  const apiKey = process.env.OPENAI_API_KEY;
 
   const [summary, setSummary] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ const App = () => {
         // Making the request to the Gemini API
         axios
           .post(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent", 
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent",
             {
               contents: [
                 {
@@ -60,13 +60,16 @@ const App = () => {
   };
 
   return (
-    <div style={{ padding: "10px", minWidth: "300px", maxWidth: "400px", minHeight: "300px", maxHeight: "500px" }}>
-      <h3>Content Summarizer</h3>
-      <button onClick={handleSummarize} disabled={loading}>
-        {loading ? "Summarizing..." : "Summarize"}
-      </button>
+    <div className="container">
+      <div className="header-container">
+        <h3>Click the button below to Summarize the webpage</h3>
+        <button onClick={handleSummarize} disabled={loading} className="summarize-button">
+          {loading ? "Summarizing..." : "Summarize"}
+        </button>
+      </div>
+
       {summary && (
-        <div>
+        <div className="summary-container">
           <h4>Summary:</h4>
           <p>{summary}</p>
         </div>
