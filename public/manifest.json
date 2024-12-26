@@ -3,22 +3,29 @@
   "name": "Website Content Summarizer",
   "version": "1.0",
   "description": "Summarize web content using AI.",
-  "permissions": ["tabs", "scripting", "activeTab", "storage"],
-  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "action": {
     "default_popup": "index.html",
     "default_icon": {
-      "16": "favicon.ico",
-      "48": "favicon.ico",
-      "128": "favicon.ico"
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     }
   },
   "icons": {
-    "16": "favicon.ico",
-    "48": "favicon.ico",
-    "128": "favicon.ico"
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   }
 }
